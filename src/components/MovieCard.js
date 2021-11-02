@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 export default function MovieCard(props) {
-    const {movie, addFavFunc} = props;
+    const {movie, addFavFunc, isFav,removeFavFunc} = props;
+
+    // console.log(isFav);
 
   return (
     <div className="movie-card">
@@ -19,9 +21,13 @@ export default function MovieCard(props) {
           <div className="infos">{movie.Language}</div>
           <div className="infos">{movie.Country}</div>
 
-          <div className="favourite">
-            <button className="favourite-btn" onClick={()=>{addFavFunc(movie)}} > Favourite </button>
-            <button className="unfavourite-btn" onClick={()=>{addFavFunc(movie)}} style={{display:"none"}}> Unfavourite </button>
+          <div className="favourite-unfavourite">
+
+            {isFav?
+            <button className="unfavourite-btn" onClick={()=>removeFavFunc(movie)} > Unfavourite </button>
+            :<button className="favourite-btn" onClick={()=>{addFavFunc(movie)}} > Favourite </button>
+            }
+
 
           </div>
         </div>

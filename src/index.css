@@ -154,6 +154,7 @@ body {
   padding: 10px 20px;
   font-size: 28px;
   font-weight: 700;
+  text-align: center;
 }
 .movie-card .plot {
   margin-top: 20px;

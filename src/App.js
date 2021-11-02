@@ -44,12 +44,28 @@ function App() {
   }
 
   //
+
+  const isFavFunction=(movie)=>{
+    let index = favMovie.findIndex((singleFavMovie)=>singleFavMovie === movie);
+
+    if(index === -1){
+      return false;
+    } else{
+      return true;
+    }
+  }
+
+  const removeFavFunc = (movie)=>{
+    let unfavList = favMovie.filter((singleFiltermovie)=>singleFiltermovie!==movie);
+    setFavMovie(unfavList);
+    // console.log("Clicked Unfav", unfavList);
+  }
+
   return (
     <>
       <Navbar />
       
       <Alerts alert={alert}/>
-
 
       <div className="main">
         <div className="tabs">
@@ -59,9 +75,9 @@ function App() {
       </div>
 
       <div className="list">
-        {showTag.map((movie, key) => (
-          <MovieCard key={key} movie={movie} addFavFunc={addFavFunc} />
-        ))}
+        {showTag.map((movie, key) => {
+         return <MovieCard key={key} movie={movie} addFavFunc={addFavFunc} isFav={isFavFunction(movie)} removeFavFunc={removeFavFunc}/>
+          })}
       </div>
     </>
   );
