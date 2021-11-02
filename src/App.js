@@ -61,9 +61,14 @@ function App() {
     // console.log("Clicked Unfav", unfavList);
   }
 
+  const handleAddMovies = (movie)=>{
+    setMovieData([movie, ...movieData]);
+
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar showAlert={showAlert} handleAddMovies={handleAddMovies}/>
       
       <Alerts alert={alert}/>
 

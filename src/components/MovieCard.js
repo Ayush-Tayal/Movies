@@ -6,7 +6,7 @@ export default function MovieCard(props) {
     // console.log(isFav);
 
   return (
-    <div className="movie-card">
+    <div className="movie-card ">
       <div className="left">
         <img src={movie.Poster} alt="movie-poster" />
       </div>
