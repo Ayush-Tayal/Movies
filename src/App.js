@@ -15,7 +15,7 @@ function App() {
   const addFavFunc = (movie)=>{
     setFavMovie([movie, ...favMovie])
     // setFavMovie((prevState)=>[...prevState, movie]);
-    showAlert("Success:","Movie added to the fav list" );
+    showAlert("Success:","Added to favourites" );
   };
   // console.log("All fav movies", favMovie);
   
@@ -58,6 +58,8 @@ function App() {
   const removeFavFunc = (movie)=>{
     let unfavList = favMovie.filter((singleFiltermovie)=>singleFiltermovie!==movie);
     setFavMovie(unfavList);
+    showAlert("Success:","Removed from favourites" );
+
     // console.log("Clicked Unfav", unfavList);
   }
 
@@ -89,3 +91,4 @@ function App() {
 }
 
 export default App;
+
