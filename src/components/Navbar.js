@@ -12,7 +12,9 @@ export default function Navbar(props) {
     
     const onSeachClick = async()=>{
         if(inputVal.length > 1 ){
-            const res = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=891a9115`, {method: 'GET',mode: 'cors'});
+            const res = await fetch(`https://cdn.jsdelivr.net/gh/akabab/omdbapi.com/?t=${inputVal}&apikey=891a9115`, {method: 'GET',mode: 'cors'}); 
+                //     `http://omdbapi.com/?t=${inputVal}&apikey=891a9115`
+
             const data =await res.json();
             setSeachData(data);
         } else{
