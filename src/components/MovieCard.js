@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function MovieCard(props) {
     const {movie, addFavFunc, isFav,removeFavFunc} = props;

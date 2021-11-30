@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { data } from '../data';
 
 export default function Navbar(props) {
     const {handleAddMovies} = props;
@@ -8,11 +7,11 @@ export default function Navbar(props) {
     // console.log("Input Value", searchVal);
     
     const [seachData, setSeachData] = useState(null)
-    console.log(seachData);
+    // console.log(seachData);
     
     const onSeachClick = async()=>{
         if(inputVal.length > 1 ){
-            const res = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=891a9115`, {method: 'GET',mode: 'cors'});
+            const res = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=891a9115`);
             const data =await res.json();
             setSeachData(data);
         } else{
