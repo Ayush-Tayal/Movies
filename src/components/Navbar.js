@@ -11,7 +11,7 @@ export default function Navbar(props) {
     
     const onSeachClick = async()=>{
         if(inputVal.length > 1 ){
-            const res = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=891a9115`);
+            const res = await fetch(`https://omdbapi.com/?t=${inputVal}&apikey=891a9115`);
             const data =await res.json();
             setSeachData(data);
         } else{
